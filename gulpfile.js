@@ -34,9 +34,14 @@ gulp.task('copyData', function(){
 	gulp.src(['xml/*.xml','json/*.json']).pipe(gulp.dest('dist/data'));
 });
 
+//拷贝css文件
+gulp.task('copyCss',function(){
+	gulp.src('css/*.css').pipe(gulp.dest('dist/css'));
+})
+
 //改变sass文件为css文件
 gulp.task("sass",function(){
-	gulp.src("css/*.scss")
+	gulp.src(["css/*.scss", "css/*.css"])
 	.pipe(sourcemaps.init())
 	.pipe(sass({outputStyle: 'compact'}))
 	.pipe(sourcemaps.write())
@@ -45,7 +50,7 @@ gulp.task("sass",function(){
 
 
 //多个任务一起执行(类似default)
-gulp.task('build',['copyHTML','copyImage','copyData','sass','concat'],function(){
+gulp.task('build',['copyHTML','copyImage','copyData','copyCss','concat'],function(){
 	console.log('congratulations!!!');
 })
 
@@ -80,7 +85,7 @@ gulp.task("babel",function(){
 
 //侦测文件变化,改变后自动执行对应命令
 gulp.task('watch', function(){
-	gulp.watch(['images/*','json/*.json','css/*.sass','js/*.js','html/*.html','index.html'],['copyImage','copyData','sass','concat','copyHTML']);
+	gulp.watch(['images/*','json/*.json','css/*.css','js/*.js','html/*.html','index.html'],['copyImage','copyData','copyCss','concat','copyHTML']);
 })
 
 
