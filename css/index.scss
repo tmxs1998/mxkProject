@@ -2,6 +2,7 @@ $wrap_width: 100%;
 $top_bar_height: 25px;
 $mid_bar_height: 76px;
 $nav_height: 34px;
+$banner_height: 710px;
 $de_color: #FF6600;
 $ac_color: #FC0000;
 .container{
@@ -53,7 +54,7 @@ $ac_color: #FC0000;
 					border-top: 0;
 					border-bottom: 0;
 					background: #fff;
-					z-index: 2;
+					z-index: 11;
 				}
 				&:hover div{
 					display: block;
@@ -80,6 +81,7 @@ $ac_color: #FC0000;
 					width: 150px;
 					background: #fff;
 					border: solid 1px #CCCCCC;
+					z-index: 10;
 					ul{
 						width: $wrap_width;
 						li{
@@ -256,10 +258,55 @@ $ac_color: #FC0000;
 
 #banner{
 	width: $wrap_width;
-	.container>ul{
-		width: $wrap_width;
+	height: $banner_height;
+	.container{
+		position: relative;
+		height: $banner_height;
+		.banner_ul{
+			position: absolute;
+			left: -465px;
+			top: 0;
+			width: 1920px;
+			height: $banner_height;
+			
+			li{
+				width: $wrap_width;
+				float: left;
+				opacity: 0;
+				display: none;
+			}
+			
+			img{
+				width: $wrap_width;
+			}
+			
+			.banner_ac{
+				display: block;
+				opacity: 1;
+			}
+		}
+		
+		.index_ul{
+			position: absolute;
+			left: 50%;
+			bottom: 5%;
+			transform: translateX(-50%);
+			li{
+				margin-right: 8px;
+				float: left;
+				width: 14px;
+				height: 14px;
+				border-radius: 50%;
+				background: #B5B5B5;
+			}
+			
+			.index_ac{
+				background: #C80002;
+			}
+		}
 	}
 }
+
 
 
  
