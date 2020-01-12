@@ -1,6 +1,7 @@
 $wrap_width: 100%;
 $top_bar_height: 25px;
 $mid_bar_height: 76px;
+$nav_height: 34px;
 $de_color: #FF6600;
 $ac_color: #FC0000;
 .container{
@@ -130,16 +131,136 @@ $ac_color: #FC0000;
 		height: $mid_bar_height;
 		.container>div{
 			float: left;
+			margin-right: 20px;
 		}
 		
 		.container>h1{
 			float: left;
-			margin-top: 6px;
+			margin-top: 12px;
+			margin-right: 20px;
 		}
 		
+		.search_bar {
+			width: 350px;
+			margin-top: 6px;
+			>input{
+				float: left;
+			}
+			
+			#search_text{
+				margin-top: 20px;
+				width: 270px;
+				height: 26px;
+				outline: 0;
+				
+			}
+			
+			#search_btn{
+				margin-top: 20px;
+				display: block;
+				width: 65px;
+				height: 30px;
+				font-size: 16px;
+				letter-spacing: 2px;
+				outline: 0;
+				border: solid 1px #333;
+				color: #fff;
+				background: #333;
+			}
+			
+			.search_hbox{
+				p{
+					float: left;
+					color: #ccc;
+				}
+				
+				.search_hot{
+					float: left;
+					span a{
+						color: #888;
+						cursor: pointer;
+						&:hover{
+							color: $ac_color;
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
 		
+		.cart_btn{
+			margin-top: 26px;
+			width: 126px;
+			height: 34px;
+			background: url(../images/head_cart_bg.gif) 0 0 no-repeat;
+			&:hover{
+				background: url(../images/head_cart_bg.gif) 0 -34px no-repeat;
+			}
+			
+			&:hover span{
+				color: #fff;
+			}
+			
+			span{
+				color: #666;
+				line-height: 34px;
+			}
+			
+			span:first-child{
+				margin-left: 40px;
+			}
+			
+			#cart_num{
+				color: #CC0000;
+			}
+		}
+	}
+	
+	.nav{
+		width: $wrap_width;
+		height: $nav_height;
+		background: #A21F25;
+		ul{
+			float: left;
+			li{
+				float: left;
+				padding: 0 18px;
+				height: 34px;
+				line-height: 34px;
+				text-align: center;
+				font-size: 14px;
+				color: #fff;
+				a{
+					display: block;
+					width: 100%;
+					height: 100%;
+					color: #fff;
+				}
+			}
+			.sp_all{
+				padding: 0;
+				width: 190px;
+				background: #B9363D;
+			}
+			.go_index{
+				background: #444;
+			}
+		}
+		
+		.nav_zp{
+			float: right;
+		}
+	}
+	
+}
+
+#banner{
+	width: $wrap_width;
+	.container>ul{
+		width: $wrap_width;
 	}
 }
+
 
  
 
