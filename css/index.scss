@@ -1,5 +1,6 @@
 $wrap_width: 100%;
 $top_bar_height: 25px;
+$mid_bar_height: 76px;
 $de_color: #FF6600;
 $ac_color: #FC0000;
 .container{
@@ -18,9 +19,12 @@ $ac_color: #FC0000;
 			height: $top_bar_height;
 			>li{
 				float: left;
+				height: $top_bar_height;
+				padding-right: 5px;
 				span{
+					float: left;
 					display: block;
-					padding: 2px 15px;
+					padding: 2px 20px;
 					height: $top_bar_height - 5;
 					line-height: $top_bar_height - 5;
 					font-size: 12px;
@@ -33,25 +37,31 @@ $ac_color: #FC0000;
 						}
 					}
 				}
+				
+				>img{
+					margin-top: 3px;
+				}
 			}
+			
 			.myscn{
 				position: relative;
+				&:hover .li_btn{
+					position: relative;
+					padding: 2px 19px;
+					border: solid 1px #ccc;
+					border-top: 0;
+					border-bottom: 0;
+					background: #fff;
+					z-index: 2;
+				}
+				&:hover div{
+					display: block;
+				}
 				.li_btn{
 					display: block;
 					height: $top_bar_height - 3;
 					line-height: $top_bar_height - 5;
-					&:hover{
-						position: relative;
-						padding: 2px 14px;
-						border: solid 1px #ccc;
-						border-top: 0;
-						border-bottom: 0;
-						background: #fff;
-						z-index: 2;
-					}
-					&:hover ~.myscn_drop{
-						display: block;
-					}
+					
 					&:after{
 						content: "";
 						position: absolute;
@@ -62,7 +72,7 @@ $ac_color: #FC0000;
 					}
 				}
 				
-				.myscn_drop{
+				div{
 					position: absolute;
 					top: $top_bar_height;
 					right: 0;
@@ -89,10 +99,45 @@ $ac_color: #FC0000;
 				.hide{
 					display: none;
 				}
-				
+			}
 			
+			.phscn{
+				@extend .myscn;
+				i{
+					position: absolute;
+					left: 0;
+					top: 5px;
+					width: 14px;
+					height: 14px;
+					background: url(../images/icon_little.png) 390px 0px ;
+				}
+				div{
+					width: 230px;
+					img{
+						float: left;
+						margin: 10px;
+					}
+					img:last-child{
+						margin-left: 0;
+					}
+				}
 			}
 		}
+	}
+	
+	.middle_bar{
+		width: $wrap_width;
+		height: $mid_bar_height;
+		.container>div{
+			float: left;
+		}
+		
+		.container>h1{
+			float: left;
+			margin-top: 6px;
+		}
+		
+		
 	}
 }
 
