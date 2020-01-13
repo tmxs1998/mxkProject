@@ -45,7 +45,7 @@
 	});
 	
 	$(function(){
-		$.ajax('http://localhost:3000/proDatas').then(function(data){
+		$.ajax('http://localhost:3000/iAllDatas').then(function(data){
 			console.log(data.magic);
 			let nav = $(".sp_all_ac");
 			let magic = data.magic;
@@ -87,6 +87,17 @@
 			// 所有商品二级菜单
 			let nav_list = nav.children();
 			let str1 = ``;
+		});
+		
+		$.ajax('http://localhost:3000/footerSpList').then(function(f_data){
+			let str = "";
+			$.each(f_data, function(i, n){
+				for(let j = 0; j < n.length; j++){
+					str += `<a href="#">${n[j]}</a>`;
+				}
+				$("." + i).html(str);
+				str = "";
+			});
 			
 		});
 	});
