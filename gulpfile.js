@@ -49,12 +49,6 @@ gulp.task("sass",function(){
 });
 
 
-//多个任务一起执行(类似default)
-gulp.task('build',['copyHTML','copyImage','copyData','copyCss','sass','common_concat','index_concat'],function(){
-	console.log('congratulations!!!');
-})
-
-
 //把js文件变为es5格式并合并js文件,并对js文件进行压缩
 gulp.task("common_concat",function(){
 	gulp.src(["js/common.js"])
@@ -66,10 +60,21 @@ gulp.task("common_concat",function(){
 	.pipe(gulp.dest("dist/js"));	
 });
 
+//index的js文件转es5并压缩
 gulp.task("index_concat",function(){
 	gulp.src(["js/index.js"])
 	.pipe(babel({"presets":["es2015"]}))
 	.pipe(concat("index.js"))
+	.pipe(gulp.dest("dist/js"))
+	.pipe(uglify())
+	.pipe(rename({suffix:".min"}))
+	.pipe(gulp.dest("dist/js"));	
+});
+
+//sp_show的js文件转es5并压缩
+gulp.task("sp_show_uglify",function(){
+	gulp.src(["js/sp_show.js"])
+	.pipe(babel({"presets":["es2015"]}))
 	.pipe(gulp.dest("dist/js"))
 	.pipe(uglify())
 	.pipe(rename({suffix:".min"}))
@@ -92,9 +97,14 @@ gulp.task("babel",function(){
 	.pipe(gulp.dest("dist/js"))
 });
 
+//多个任务一起执行(类似default)
+gulp.task('build',['copyHTML','copyImage','copyData','copyCss','sass','common_concat','index_concat', 'sp_show_uglify'],function(){
+	console.log('congratulations!!!');
+})
+
 //侦测文件变化,改变后自动执行对应命令
 gulp.task('watch', function(){
-	gulp.watch(['images/*','json/*.json','css/*.css','css/*scss','js/*.js','html/*.html','index.html'],['copyImage','copyData','copyCss','sass','common_concat',"index_concat",'copyHTML','copyHTML']);
+	gulp.watch(['images/*','json/*.json','css/*.css','css/*scss','js/*.js','html/*.html','index.html'],['copyImage','copyData','copyCss','sass','common_concat',"index_concat",'sp_show_uglify','copyHTML','copyHTML']);
 })
 
 
