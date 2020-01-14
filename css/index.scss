@@ -4,6 +4,7 @@ $mid_bar_height: 76px;
 $nav_height: 34px;
 $banner_height: 710px;
 $f_int_height: 195px;
+$rb_width: 37px;
 $de_color: #FF6600;
 $ac_color: #FC0000;
 .container{
@@ -114,7 +115,7 @@ $ac_color: #FC0000;
 					top: 5px;
 					width: 14px;
 					height: 14px;
-					background: url(../images/icon_little.png) 390px 0px ;
+					background: url(http://localhost:8080/images/icon_little.png) 390px 0px ;
 				}
 				div{
 					width: 230px;
@@ -196,9 +197,9 @@ $ac_color: #FC0000;
 			margin-top: 26px;
 			width: 126px;
 			height: 34px;
-			background: url(../images/head_cart_bg.gif) 0 0 no-repeat;
+			background: url(http://localhost:8080/images/head_cart_bg.gif) 0 0 no-repeat;
 			&:hover{
-				background: url(../images/head_cart_bg.gif) 0 -34px no-repeat;
+				background: url(http://localhost:8080/images/head_cart_bg.gif) 0 -34px no-repeat;
 			}
 			
 			&:hover span{
@@ -346,31 +347,31 @@ $ac_color: #FC0000;
 					}
 					
 					.sp_ydxxx{
-						background: url(../images/navcats_icon.png) no-repeat 10px -54px;
+						background: url(http://localhost:8080/images/navcats_icon.png) no-repeat 10px -54px;
 					}
 					.sp_ydxxf{
-						background: url(../images/navcats_icon.png) no-repeat 10px -96px;
+						background: url(http://localhost:8080/images/navcats_icon.png) no-repeat 10px -96px;
 					}
 					.sp_pb{
-						background: url(../images/navcats_icon.png) no-repeat 10px -140px;
+						background: url(http://localhost:8080/images/navcats_icon.png) no-repeat 10px -140px;
 					}
 					.sp_lq{
-						background: url(../images/navcats_icon.png) no-repeat 10px -188px;
+						background: url(http://localhost:8080/images/navcats_icon.png) no-repeat 10px -188px;
 					}
 					.sp_zq{
-						background: url(../images/navcats_icon.png) no-repeat 10px -236px;
+						background: url(http://localhost:8080/images/navcats_icon.png) no-repeat 10px -236px;
 					}
 					.sp_bb{
-						background: url(../images/navcats_icon.png) no-repeat 10px -284px;
+						background: url(http://localhost:8080/images/navcats_icon.png) no-repeat 10px -284px;
 					}
 					.sp_hw{
-						background: url(../images/navcats_icon.png) no-repeat 10px -332px;
+						background: url(http://localhost:8080/images/navcats_icon.png) no-repeat 10px -332px;
 					}
 					.sp_nx{
-						background: url(../images/navcats_icon.png) no-repeat 10px -424px;
+						background: url(http://localhost:8080/images/navcats_icon.png) no-repeat 10px -424px;
 					}
 					.sp_tx{
-						background: url(../images/navcats_icon.png) no-repeat 10px -464px;
+						background: url(http://localhost:8080/images/navcats_icon.png) no-repeat 10px -464px;
 					}
 				}
 			}
@@ -464,7 +465,7 @@ $ac_color: #FC0000;
 				text-indent: -999px;
 				border-right: 1px solid #DFDFDF;
 				border-bottom: 1px solid #DFDFDF;
-				background: url(../images/shoes_pp.png) no-repeat 36px -176px;
+				background: url(http://localhost:8080/images/shoes_pp.png) no-repeat 36px -176px;
 				a{
 					display: block;
 					width: $wrap_width;
@@ -563,6 +564,8 @@ $ac_color: #FC0000;
 	}
 }
 
+// footer_int
+
 #footer_int{
 	width: $wrap_width;
 	height: $f_int_height;
@@ -617,6 +620,8 @@ $ac_color: #FC0000;
 		}
 	}
 }
+
+// footer_copy
 
 #footer_copy{
 	width: $wrap_width;
@@ -702,6 +707,135 @@ $ac_color: #FC0000;
 					margin-right: 0;
 				}
 			}
+		}
+	}
+}
+
+
+// right_bar
+#right_bar{
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 37px;
+	height: $wrap_width;
+	background: #000;
+	z-index: 99;
+	>div{
+		position: relative;
+		width: $rb_width;
+		>i{
+			display: block;
+			margin: 0 auto;
+			width: $rb_width;
+			height: $rb_width;
+			background: url(http://localhost:8080/images/rbar_icon.png) no-repeat;
+		}
+		
+		>p{
+			margin: 0 auto;
+			width: 26px;
+			height: 90px;
+			font-size: 16px;
+			text-align: center;
+			color: #fff;
+		}
+		
+		.rb_tip{
+			display: none;
+			opacity: 0;
+			position: absolute;
+			right: 50px;
+			top: 0;
+			padding: 7px;
+			background: #333333;
+			z-index: 99;
+			>i{
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				line-height: 20px;
+				background: url(http://localhost:8080/images/share_icon.gif) 0 0 no-repeat;
+			}
+			
+			>a{
+				display: inline-block;
+				width: 50px;
+				height: 20px;
+				text-align: center;
+				line-height: 20px;
+				color: #fff;
+			}
+			
+			&:after{
+				content: "";
+				position: absolute;
+				right: -10px;
+				top: 50%;
+				transform: translateY(-50%);
+				border: solid 5px transparent;
+				border-left: solid 5px #333;
+			}
+		}
+		
+		.rb_share{
+			width: 140px;
+			height: 37px;
+		}
+		
+		&:hover >i{
+			transform: scale(1.2);
+		}
+		
+	}
+	
+	.rb_rm{
+		background: #c40000;
+		>i{
+			background-position: 7px  7px;
+		}
+	}
+	
+	.rb_pp{
+		>i{
+			background-position: 7px  -30px;
+		}
+	}
+	
+	.rb_cart{
+		>i{
+			background-position: 7px  -80px;
+		}
+	}
+	
+	.rb_dd{
+		>i{
+			background-position: 10px  -120px;
+		}
+	}
+	
+	.rb_sc{
+		position: absolute;
+		bottom: 74px;
+		>i{
+			background-position: 7px  -216px;
+		}
+	}
+	
+	.rb_fx{
+		position: absolute;
+		bottom: 37px;
+		>i{
+			background-position: 7px  -270px;
+		}
+	}
+	
+	.rb_gotop{
+		position: absolute;
+		display: none;
+		bottom: 0;
+		>i{
+			background-position: 6px  -323px;
 		}
 	}
 }

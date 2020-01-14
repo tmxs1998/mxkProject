@@ -1,6 +1,7 @@
 'use strict';
 
 (function () {
+	// 轮播图
 	$(function () {
 		var ban = $('#banner');
 		var ban_list = $('.banner_ul li');
@@ -84,6 +85,7 @@
 			var str1 = '';
 		});
 
+		// 底部商品列表
 		$.ajax('http://localhost:3000/footerSpList').then(function (f_data) {
 			var str = "";
 			$.each(f_data, function (i, n) {
@@ -93,6 +95,28 @@
 				$("." + i).html(str);
 				str = "";
 			});
+		});
+
+		// 侧边栏
+		$("#right_bar > div").mouseover(function () {
+			$(this).find(".rb_tip").show().stop().animate({ "opacity": 1, "right": "37px" }, 500);
+		});
+
+		$("#right_bar > div").mouseleave(function () {
+			$(this).find(".rb_tip").stop().css({ "display": "none", "opacity": 0, "right": "50px" });
+		});
+
+		$(".rb_gotop").mousedown(function () {
+			$("html, body").animate({ "scrollTop": 0 }, 1000);
+		});
+
+		$(window).scroll(function () {
+			var wt = $(window).scrollTop();
+			if (wt > 500) {
+				$(".rb_gotop").show();
+			} else {
+				$(".rb_gotop").hide();
+			}
 		});
 	});
 })();
