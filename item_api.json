@@ -483,5 +483,63 @@
 		"footer_ydxxx":["帆布鞋", "休闲鞋", "豆豆鞋", "靴子", "板鞋", "男鞋", "女鞋", "单鞋", "皮鞋", "沙滩鞋", "赛车鞋", "儿童鞋"],
 		"footer_fz":["运动服", "男运动服", "女运动服", "运动裤", "卫衣", "夹克", "T恤", "外套", "冲锋衣", "棉服", "羽绒服", "休闲裤"],
 		"footer_bb":["运动包", "户外包", "双肩包", "单肩包", "腰包", "手拎包", "男包", "女包", "帽子", "袜子", "足球", "篮球"]
-	}
+	},
+	
+	"prodatas":[
+		{
+			"id": "wy",
+			"title": "阿迪达斯男服外套夹克2019新款连帽防风卫衣",
+			"dp_price": 699,
+			"xs_price": 399,
+			"cx_price": 390,
+			"discount": 5.6,
+			"good": 4.5,
+			"send": "名鞋库会员满399包邮 ( 不包括货到付款 )",
+			"size": ["S", "M", "L"],
+			"color": [{"c":"黑色", "src": "http://localhost:8080/images/wy_little.jpg"}],
+			"imgsrc":["http://localhost:8080/images/wy_big1.jpg","http://localhost:8080/images/wy_big2.jpg","http://localhost:8080/images/wy_big3.jpg"],
+			"info": ["http://localhost:8080/images/wy_info1.jpg","http://localhost:8080/images/wy_info2.jpg","http://localhost:8080/images/wy_info3.jpg"]
+		},
+		{
+			"id": "wk",
+			"title": "adidas女服运动长裤2019新款训练收口针织卫裤",
+			"dp_price": 369,
+			"xs_price": 216,
+			"discount": 5.9,
+			"good": 4.5,
+			"send": "名鞋库会员满399包邮 ( 不包括货到付款 )",
+			"size": ["XS", "S", "M", "L"],
+			"color": [{"c":"黑色", "src": "http://localhost:8080/images/wk_little.jpg"}],
+			"imgsrc":["http://localhost:8080/images/wk_big1.jpg","http://localhost:8080/images/wk_big2.jpg","http://localhost:8080/images/wk_big3.jpg"],
+			"info": ["http://localhost:8080/images/wy_info1.jpg","http://localhost:8080/images/wk_info2.jpg","http://localhost:8080/images/wk_info3.jpg"]
+		},
+		{
+			"id": "ydxxx",
+			"title": "New balance-NB 休闲鞋运动休闲女运动鞋",
+			"dp_price": 619,
+			"xs_price": 199,
+			"discount": 2.9,
+			"good": 4.5,
+			"send": "名鞋库会员满399包邮 ( 不包括货到付款 )",
+			"size": ["35", "36", "37", "37.5"],
+			"color": [{"c":"黑色", "src": "http://localhost:8080/images/ydxxx_little.jpg"}],
+			"imgsrc":["http://localhost:8080/images/ydxxx_big1.jpg","http://localhost:8080/images/ydxxx_big2.jpg","http://localhost:8080/images/ydxxx_big3.jpg"],
+			"info": ["http://localhost:8080/images/wy_info1.jpg","http://localhost:8080/images/ydxxx_info2.jpg","http://localhost:8080/images/ydxxx_info3.jpg"]
+		},
+		{
+			"id": "bx",
+			"title": "adidas阿迪达斯男子板鞋休闲运动鞋",
+			"dp_price": 469,
+			"xs_price": 299,
+			"cx_price": 285,
+			"discount": 6.1,
+			"good": 4.5,
+			"send": "名鞋库会员满399包邮 ( 不包括货到付款 )",
+			"size": ["42.5", "43", "44", "44.5"],
+			"color": [{"c":"白色", "src": "http://localhost:8080/images/bx_little.jpg"}],
+			"imgsrc":["http://localhost:8080/images/bx_big1.jpg","http://localhost:8080/images/bx_big2.jpg","http://localhost:8080/images/bx_big3.jpg"],
+			"info": ["http://localhost:8080/images/wy_info1.jpg","http://localhost:8080/images/bx_info2.jpg","http://localhost:8080/images/bx_info3.jpg"]
+		}
+	]
+	
 }
