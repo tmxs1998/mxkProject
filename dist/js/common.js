@@ -3,7 +3,6 @@
 (function () {
 	$(function () {
 		$.ajax('http://localhost:3000/iAllDatas').then(function (data) {
-			console.log(data.magic);
 			var nav = $(".sp_all_ac");
 			var magic = data.magic;
 			var str = '';

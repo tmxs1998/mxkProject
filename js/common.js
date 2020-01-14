@@ -1,7 +1,6 @@
 (function(){
 	$(function(){
 		$.ajax('http://localhost:3000/iAllDatas').then(function(data){
-			console.log(data.magic);
 			let nav = $(".sp_all_ac");
 			let magic = data.magic;
 			let str = ``;

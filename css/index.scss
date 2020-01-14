@@ -1,5 +1,6 @@
 $wrap_width: 100%;
 $banner_height: 710px;
+$con_dl_width: 237px;
 $de_color: #FF6600;
 $ac_color: #FC0000;
 
@@ -55,5 +56,96 @@ $ac_color: #FC0000;
 	}
 }
 
+
+// content
+#content{
+	width: $wrap_width;
+	background: #8e0a18;
+	.con{
+		width: $wrap_width;
+		.con_tit{
+			width: $wrap_width;
+			>img{
+				width: 1920px;
+				margin-left: -465px;
+			}
+		}
+		
+		.con_list{
+			width: $wrap_width;
+			dl{
+				margin: 10px 3px;
+				float: left;
+				width: $con_dl_width;
+				background: #fff;
+				border: solid 2px #ffffff;
+				dt{
+					width: $con_dl_width;
+					height: 210px;
+					border-bottom: solid 1px #dedede;
+					>a{
+						display: block;
+						width: $wrap_width;
+						height: $wrap_width;
+						cursor: pointer;
+						img{
+							display: block;
+							width: $wrap_width;
+							height: $wrap_width;
+						}
+					}
+				}
+				
+				dd{
+					width: $con_dl_width;
+					height: 68px;
+					margin-bottom: 2px;
+					>a{
+						display: block;
+						width: $wrap_width;
+						height: $wrap_width;
+						cursor: pointer;
+						>h4{
+							padding: 2px 3px;
+							line-height: 20px;
+							word-break: break-all;
+							color: #333;
+						}
+						
+						span{
+							float: left;
+							display: block;
+							padding: 4px 2px;
+							height: 20px;
+							line-height: 20px;
+							&:nth-of-type(1){
+								font-size: 18px;
+								color: #ff0000;
+								font-weight: 800;
+							}
+							&:nth-of-type(2){
+								color: #333;
+								text-decoration: line-through;
+							}
+							&:nth-of-type(3){
+								float: right;
+								margin-right: 10px;
+								width: auto;
+								height: 14px;
+								line-height: 14px;
+								text-align: center;
+								color: #fff;
+								background: #333;
+							}
+						}
+					}
+				}
+				&:hover{
+					border: solid 2px #FF0000;
+				}
+			}
+		}
+	}
+}
 
 

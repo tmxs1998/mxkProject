@@ -45,4 +45,21 @@
 			index_list.eq(index).attr({ 'class': 'index_ac' });
 		}
 	});
+
+	//content数据加载
+	$(function () {
+		var content = $('#content > .container');
+		var count = 20;
+		var str_con = "";
+		$.ajax('http://localhost:3000/prodatas').then(function (data) {
+			for (var i = 0; i < data.length; i++) {
+				str_con += '<div class="con clean"><div class="con_tit"><img src="//localhost:8080/images/' + data[i].id + '.jpg" ></div><div class="con_list clean">';
+				for (var j = 0; j < count; j++) {
+					str_con += '<dl><dt><a href="//localhost:8080/html/sp_show?id=' + data[i].id + '" target="_blank" title="' + data[i].title + '"><img src="' + data[i].imgsrc[0] + '" ></a></dt><dd><a href="//localhost:8080/html/sp_show?id=' + data[i].id + '" class="clean" target="_blank" title="' + data[i].title + '"><h4>' + data[i].title + '</h4><span>\uFFE5' + data[i].xs_price + '</span><span>\uFFE5' + data[i].dp_price + '</span><span>\u7ACB\u5373\u62A2\u8D2D</span></a></dd></dl>';
+				}
+				str_con += '</div></div>';
+			}
+			content.html(str_con);
+		});
+	});
 })();
