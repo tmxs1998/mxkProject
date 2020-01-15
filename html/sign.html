@@ -29,16 +29,16 @@
 						<div class="sf_l">
 							<span class="s_war">您输入的密码不可小于4个字符</span>
 							<div class="sf_wrap clean">
-								<label class="sf_tit">用户名：</label><input type="text" id="s_username" />
+								<label class="sf_tit">用户名：</label><input type="text" id="s_username" class="signinfo" placeholder="请输入邮箱" />
 							</div>
 							<div class="sf_wrap clean">
-								<label class="sf_tit">密码：</label><input type="password" id="s_pwd" />
+								<label class="sf_tit">密码：</label><input type="password" id="s_pwd" class="signinfo" placeholder="字母开头6-15位数字、字母、下划线" />
 							</div>
 							<div class="sf_wrap clean">
-								<label class="sf_tit">确认密码：</label><input type="text" id="s_repwd" />
+								<label class="sf_tit">确认密码：</label><input type="password" id="s_repwd" class="signinfo" placeholder="请重新输入密码" />
 							</div>
 							<div class="sf_wrap clean">
-								<label class="sf_tit">验证码：</label><input type="text" id="s_yzm" /><a href="javascript:;" class="sf_yzmRan">1545</a>
+								<label class="sf_tit">验证码：</label><input type="text" id="s_yzm" class="signinfo" /><a href="javascript:;" class="sf_yzmRan">1545</a>
 							</div>
 							<div class="sf_wrap clean">
 								<input type="checkbox" id="s_cb" checked="checked" /><label for="s_cb">我已阅读并同意</label><a href="#">名鞋库会员注册协议。</a>
@@ -83,6 +83,8 @@
 			</div>
 		</div>
 
+
+		<script src="http://localhost:8080/js/sign.min.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 
 

@@ -44,6 +44,16 @@ $content_width: 450px;
 			overflow: hidden;
 			box-shadow: 1px 1px 4px 1px #ccc;
 			
+			.l_war{
+				display: inline-block;
+				opacity: 0;
+				margin-left: 60px;
+				height: 14px;
+				line-height: 14px;
+				color: #f00;
+				background: #fceae8;
+				border: solid 1px #f00;
+			}
 			
 			.wrap{
 				width: 320px;
@@ -81,7 +91,7 @@ $content_width: 450px;
 				.l_ranyzm{
 					display: block;
 					float: left;
-					width: 60px;
+					width: 70px;
 					height: 30px;
 					line-height: 30px;
 					text-align: center;

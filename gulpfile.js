@@ -71,9 +71,9 @@ gulp.task("index_concat",function(){
 	.pipe(gulp.dest("dist/js"));	
 });
 
-//sp_show的js文件转es5并压缩
+//js文件转es5并压缩
 gulp.task("sp_show_uglify",function(){
-	gulp.src(["js/sp_show.js"])
+	gulp.src(["js/*.js", "!js/index.js", "!js/common.js", "!js/*.min.js"])
 	.pipe(babel({"presets":["es2015"]}))
 	.pipe(gulp.dest("dist/js"))
 	.pipe(uglify())
