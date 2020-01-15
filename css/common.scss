@@ -253,10 +253,13 @@ $ac_color: #FC0000;
 			.sp_all{
 				position: relative;
 				padding: 0;
-				width: 190px;
+				width: 80px;
 				background: #B9363D;
 				&:hover .sp_all_ac{
 					display: block;
+				}
+				&:first-child{
+					width: 190px;
 				}
 				.sp_all_ac{
 					display: none;

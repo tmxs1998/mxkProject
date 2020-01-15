@@ -104,7 +104,7 @@ gulp.task('build',['copyHTML','copyImage','copyData','copyCss','sass','common_co
 
 //侦测文件变化,改变后自动执行对应命令
 gulp.task('watch', function(){
-	gulp.watch(['images/*','json/*.json','css/*.css','css/*scss','js/*.js','html/*.html','index.html'],['copyImage','copyData','copyCss','sass','common_concat',"index_concat",'sp_show_uglify','copyHTML','copyHTML']);
+	gulp.watch(['images/*','json/*.json','css/*.css','css/*.scss','js/*.js','html/*.html','index.html'],['copyImage','copyData','copyCss','sass','common_concat',"index_concat",'sp_show_uglify','copyHTML','copyHTML']);
 })
 
 

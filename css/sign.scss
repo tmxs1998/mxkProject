@@ -1,0 +1,165 @@
+$wr_width: 100%;
+$ac_color: #f00;
+$s_content_width: 770px;
+
+// s_main
+
+#s_main{
+	width: $wr_width;
+	height: 440px;
+	
+	.s_content{
+		margin: 20px auto;
+		width: $s_content_width;
+		box-shadow: 0 0 6px 2px #aaa;
+	}
+	
+	.s_title{
+		width: $s_content_width - 20;
+		height: 30px;
+		padding: 4px 10px;
+		background: #f8f8f8;
+		h4{
+			width: $wr_width;
+			height: 30px;
+			line-height: 30px;
+			font-size: 16px;
+			font-weight: bold;
+			color: #888;
+		}
+	}
+	
+	.s_form{
+		width: $wr_width;
+		height: 408px;
+		
+		.sf_l{
+			float: left;
+			width: 426px;
+			margin: 30px 0 40px 80px;
+			border-right: solid 1px #dedede;
+			.s_war{
+				display: inline-block;
+				opacity: 0;
+				margin-left: 75px;
+				height: 14px;
+				line-height: 14px;
+				color: #f00;
+				background: #fceae8;
+				border: solid 1px #f00;
+			}
+			
+			.sf_wrap{
+				margin-top: 15px;
+				width: $wr_width;
+				height: 30px;
+				
+				>label{
+					display: block;
+					float: left;
+				}
+				
+				.sf_tit{
+					width: 75px;
+					height: 30px;
+					line-height: 30px;
+					font-size: 12px;
+					color: #666;
+					text-align: right;
+				}
+				
+				>input{
+					display: block;
+					float: left;
+				}
+					
+				>input[type="text"],
+				>input[type="password"]{
+					width: 230px;
+					height: 28px;
+					line-height: 28px;
+					padding: 1px;
+					border: solid 1px #bbb;
+					outline: 0;
+				}
+				
+				#s_yzm{
+					width: 67px;
+					height: 26px;
+					line-height: 26px;
+					border: solid 1px #ccc;
+				}
+				
+				#s_cb{
+					margin-left: 75px;
+				}
+				
+				#s_btn{
+					margin-left: 75px;
+					width: 89px;
+					height: 30px;
+					line-height: 30px;
+					color: #fff;
+					background: #FF0000;
+					font-weight: bold;
+					border: solid 1px #fff;
+					outline: 0;
+				}
+				
+				a{
+					display: block;
+					float: left;
+					color: #3366DD;
+					text-decoration: underline;
+				}
+				
+				.sf_yzmRan{
+					width: 60px;
+					height: 28px;
+					border: solid 1px #333333;
+					font-size: 20px;
+					text-align: center;
+					text-decoration: none;
+					color: #333;
+					background: #fff;
+				}
+			}
+		}
+		
+		.sf_r{
+			display: block;
+			float: left;
+			width: 260px;
+			height: 300px;
+			text-align: center;
+			overflow: hidden;
+			
+			p{
+				margin-top: 30%;
+				height: 14px;
+				line-height: 14px;
+				font-size: 14px;
+				font-weight: bold;
+			}
+				
+			a{
+				display: block;
+				margin: 30px auto;
+				width: 90px;
+				height: 30px;
+				line-height: 30px;
+				font-size: 14px;
+				font-weight: bold;
+				color: #cc6666;
+				border: solid 1px #cc6666;
+				background: rgb(250,237,214);
+				box-shadow: 1px 1px 4px 1px #ccc;
+			}
+			
+			img{
+				margin: 20px auto;
+			}
+		}
+		
+	}
+}

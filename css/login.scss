@@ -1,0 +1,142 @@
+$wr_width: 100%;
+$content_width: 450px;
+
+.container{
+	width: 990px;
+	margin: 0 auto;
+}
+
+#content{
+	width: $wr_width;
+	overflow: hidden;
+	
+	.lm_l{
+		float: left;
+		width: 380px;
+	}
+	
+	.lm_r{
+		float: left;
+		padding-left: 50px;
+		width: 550px;
+		
+		>h4{
+			width: $wr_width;
+			height: 28px;
+			line-height: 28px;
+			font-size: 20px;
+			font-weight: bold;
+			color: #333;
+			>span{
+				margin-left: 10px;
+				height: 12px;
+				line-height: 12px;
+				font-size: 12px;
+				color: #aaa;
+				font-weight: normal;
+			}
+		}
+		
+		.lm_r_content{
+			margin-top: 10px;
+			width: 450px;
+			background: #fafafa; 	
+			overflow: hidden;
+			box-shadow: 1px 1px 4px 1px #ccc;
+			
+			
+			.wrap{
+				width: 320px;
+				height: 30px;
+				margin-top: 20px;
+				margin-left: 50px;
+				
+				label{
+					display: block;
+					float: left;
+					width: 60px;
+					height: 30px;
+					font-size: 14px;
+					text-align: center;
+					line-height: 30px;
+				}
+				
+				input{
+					display: block;
+					float: left;
+					width: 230px;
+					height: 28px;
+					padding: 1px;
+					border: solid 1px #ddd;	
+					outline: 0;
+				}
+				
+				
+				
+				#l_yzm{
+					width: 80px;
+					margin-right: 20px;
+				}
+				
+				.l_ranyzm{
+					display: block;
+					float: left;
+					width: 60px;
+					height: 30px;
+					line-height: 30px;
+					text-align: center;
+					color: #333;
+					font-size: 20px;
+					text-decoration: none;
+					border: solid 1px #333;
+				}
+				
+				#l_btn{
+					margin-left: 60px;
+					width: 90px;
+					height: 30px;
+					line-height: 30px;
+					text-align: center;
+					font-weight: bold;
+					font-size: 14px;
+					border: 0;
+					outline: 0;
+					color: #fff;
+					background: #FC0000;
+				}
+				
+				.forget_pwd{
+					display: block;
+					float: left;
+					margin-left: 10px;
+					padding-top: 10px;
+					color: #777;
+					&:hover{
+						text-decoration: underline;
+						color: #FC0000;
+					}
+				}
+				
+			}
+			
+			>span{
+				display: block;
+				float: left;
+				margin: 30px 0 30px 60px;
+				height: 30px;
+				line-height: 30px;
+				color: #999;
+			}
+			
+			>a{
+				float: left;
+				display: block;
+				margin: 30px 0;
+				height: 30px;
+				line-height: 30px;
+				color: #f60;
+				text-decoration: underline;
+			}
+		}
+	}
+}
