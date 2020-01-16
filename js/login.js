@@ -64,29 +64,43 @@
 		btn.click(function(){
 			if(check() == 0){
 				$.ajax("http://localhost:3000/userinfo").then(function(data){
-					let count = 0;
 					for(let i = 0; i < data.length; i++){
 						if(data[i].id == $.trim(uname.val())){
 							if(data[i].pwd == upwd.val()){
 								let uSuccess = {id: data[i].id};
-								console.log(uSuccess);
 								localStorage.setItem('uSuccess', JSON.stringify(uSuccess));
+								$.ajax('http://localhost:3000/udata').then(function(cd){
+									for(let j = 0; j < cd.length; j++){
+										if(cd[j].id == data[i].id){
+											return;
+										}else{
+											$.ajax('http://localhost:3000/udata', {
+												type: 'post',
+												data: {id: data[i].id ,carData: ''}
+											})
+										}
+									}
+									
+								})
 								alert("登陆成功!!");
 								location.assign('http://localhost:8080/index.html');
+								return;
 							}
 						}
 					}
+						war.css({'opacity': 1});
+						war.html('请输入正确的账号或密码!!!');
+						uname.val("");
+						upwd.val("");
+						yzm.html(random());
+						yzm_txt.val("");
 					
-					war.css({'opacity': 1});
-					war.html('请输入正确的账号或密码!!!');
-					uname.val("");
-					upwd.val("");
-					yzm.html(random());
-					yzm_txt.val("");
 				});
+			}else{
+				yzm.html(random());
+				yzm_txt.val("");
 			}
-			yzm.html(random());
-			yzm_txt.val("");
+			
 		});
 		
 	});

@@ -72,5 +72,30 @@
 				$(".rb_gotop").hide();
 			}
 		});
+
+		var uSuc = JSON.parse(localStorage.getItem('uSuccess'));
+
+		if (uSuc) {
+			if (uSuc.id) {
+				var str_login = '<span>\u6B22\u8FCE\u60A8,' + uSuc.id + '<span>&nbsp;&nbsp;<a href="javascript:;" class="logout">\u6CE8\u9500</a>';
+
+				$('.login_sign').html(str_login);
+				$('.cart_btn > a').attr('href', 'http://localhost:8080/html/shopcar.html');
+				// $.ajax('http://localhost:3000/udata').then(function(u_data){
+				// 	for(let i = 0; i < u_data.length; i++){
+				// 		if(u_data[i].id == uSuc.id){
+
+				// 		}
+				// 	}
+
+				// });
+			}
+		}
+
+		$('.logout').click(function () {
+			alert("注销成功");
+			localStorage.removeItem('uSuccess');
+			window.location.reload();
+		});
 	});
 })();

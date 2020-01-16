@@ -80,5 +80,30 @@
 			
 		});
 		
+		let uSuc = JSON.parse(localStorage.getItem('uSuccess'));
+		
+		if(uSuc){
+			if(uSuc.id){
+				let str_login = `<span>欢迎您,${uSuc.id}<span>&nbsp;&nbsp;<a href="javascript:;" class="logout">注销</a>`;
+				
+				$('.login_sign').html(str_login);
+				$('.cart_btn > a').attr('href', 'http://localhost:8080/html/shopcar.html');
+				// $.ajax('http://localhost:3000/udata').then(function(u_data){
+				// 	for(let i = 0; i < u_data.length; i++){
+				// 		if(u_data[i].id == uSuc.id){
+							
+				// 		}
+				// 	}
+					
+				// });
+			}
+		}
+		
+		$('.logout').click(function(){
+			alert("注销成功")
+			localStorage.removeItem('uSuccess');
+			window.location.reload();
+		});
+		
 	});
 })();

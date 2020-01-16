@@ -206,6 +206,12 @@ $ac_color: #FC0000;
 				color: #fff;
 			}
 			
+			a{
+				display: block;
+				width: $wrap_width;
+				height: $wrap_width;
+			}
+			
 			span{
 				color: #666;
 				line-height: 34px;

@@ -104,6 +104,30 @@ $picdiv_width: 430px;
 					color: #ff0000;
 				}
 				
+				.cartSub,.cartPlus{
+					margin: 0 10px;
+					width: 18px;
+					height: 18px;
+					font-size: 16px;
+					text-align: center;
+					color: #333;
+					border: solid 1px #333333;
+					vertical-align: middle;
+				}
+				
+				#cartNum{
+					display: inline-block;
+					width: 30px;
+					height: 18px;
+					line-height: 18px;
+					border: solid 1px #333333;
+					outline: 0;
+					vertical-align: middle;
+				}
+				
+				#cartBtn{
+					vertical-align: middle;
+				}
 			}
 		}
 	}

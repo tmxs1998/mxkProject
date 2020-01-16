@@ -1,5 +1,7 @@
 'use strict';
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 (function () {
 	$(function () {
 		var uname = $('#l_username');
@@ -64,19 +66,37 @@
 		btn.click(function () {
 			if (check() == 0) {
 				$.ajax("http://localhost:3000/userinfo").then(function (data) {
-					var count = 0;
-					for (var i = 0; i < data.length; i++) {
+					var _loop = function _loop(i) {
 						if (data[i].id == $.trim(uname.val())) {
 							if (data[i].pwd == upwd.val()) {
 								var uSuccess = { id: data[i].id };
-								console.log(uSuccess);
 								localStorage.setItem('uSuccess', JSON.stringify(uSuccess));
+								$.ajax('http://localhost:3000/udata').then(function (cd) {
+									for (var j = 0; j < cd.length; j++) {
+										if (cd[j].id == data[i].id) {
+											return;
+										} else {
+											$.ajax('http://localhost:3000/udata', {
+												type: 'post',
+												data: { id: data[i].id, carData: '' }
+											});
+										}
+									}
+								});
 								alert("登陆成功!!");
 								location.assign('http://localhost:8080/index.html');
+								return {
+									v: void 0
+								};
 							}
 						}
-					}
+					};
 
+					for (var i = 0; i < data.length; i++) {
+						var _ret = _loop(i);
+
+						if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
+					}
 					war.css({ 'opacity': 1 });
 					war.html('请输入正确的账号或密码!!!');
 					uname.val("");
@@ -84,9 +104,10 @@
 					yzm.html(random());
 					yzm_txt.val("");
 				});
+			} else {
+				yzm.html(random());
+				yzm_txt.val("");
 			}
-			yzm.html(random());
-			yzm_txt.val("");
 		});
 	});
 })();
