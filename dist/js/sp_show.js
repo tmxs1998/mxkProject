@@ -34,22 +34,21 @@ $(function () {
 		var oBtn = $("#cartBtn");
 
 		nSub.click(function () {
-			console.log('-');
-			var count = oNum.value;
+			var count = oNum.val();
 			count--;
 			if (count < 1) {
 				return;
 			}
-			oNum.value = count;
+			oNum.val(count);
 		});
 
 		nPlus.click(function () {
-			console.log('+');
-			oNum.value++;
+			var count = oNum.val();
+			count++;
+			oNum.val(count);
 		});
 
 		oNum.blur(function () {
-			console.log("blur");
 			var reg = /^[1-9]\d{0,}$/;
 			if (reg.test(oNum.val())) {
 				prevText = oNum.val();
@@ -63,36 +62,33 @@ $(function () {
 			var cData = "";
 			var spnum = "";
 			if (uSuc) {
-				$.ajax('http://localhost:3000/udata').then(function (data) {
-					for (var _i = 0; _i < data.length; _i++) {
-						if (data[_i].id == uSuc.id) {
-							console.log(data[_i].carData);
-							if (data[_i].carData == undefined) {
-								cData = { spID: oNum.val() };
-								$.ajax('http://localhost:3000/udata', {
-									type: 'post',
-									data: { 'carData': cData }
-								});
-								// location.assign('http:localhost:8080/html/shopcar.html');
-							} else {
-								spnum = data[_i].carData[spID] * 1;
-								spnum += oNum.val() * 1;
-								cData = { spID: spnum };
-								console.log(cData);
-								$.ajax('http://localhost:3000/udata', {
-									type: 'post',
-									data: { 'carData': cData }
-								});
-								// location.assign('http:localhost:8080/html/shopcar.html');
-							}
-						}
+				$.ajax("http://localhost:3000/udata/" + uSuc.id).then(function (data) {
+					if (data[spID] == undefined) {
+						cData = '{"' + spID + '":"' + oNum.val() + '"}';
+						cData = JSON.parse(cData);
+
+						$.ajax("http://localhost:3000/udata/" + uSuc.id, {
+							type: 'patch',
+							data: cData
+						});
+						location.assign('http://localhost:8080/html/shopcar.html');
+					} else {
+						$.ajax("http://localhost:3000/udata/" + uSuc.id).then(function (cd) {
+							console.log(cd);
+							var aNum = cd[spID] * 1 + oNum.val() * 1;
+							cData = '{"' + spID + '":"' + aNum + '"}';
+							cData = JSON.parse(cData);
+							$.ajax("http://localhost:3000/udata/" + uSuc.id, {
+								type: 'patch',
+								data: cData
+							});
+							location.assign('http://localhost:8080/html/shopcar.html');
+						});
 					}
 				});
 			} else {
-				// location.assign('http:localhost:8080/html/login.html');
+				location.assign('http:localhost:8080/html/login.html');
 			}
 		});
-
-		// 
 	});
 });
