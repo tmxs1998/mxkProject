@@ -86,6 +86,11 @@
 						for (var i = 0; i < data.length; i++) {
 							if (data[i].id == username.val()) {
 								alert('该用户名已注册');
+								username.val('');
+								pwd.val('');
+								repwd.val('');
+								yzm_txt.val('');
+								yzm.html(random());
 								return;
 							}
 							count++;

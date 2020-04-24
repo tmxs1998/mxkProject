@@ -81,7 +81,10 @@ $content_width: 450px;
 					outline: 0;
 				}
 				
-				
+				input[type="text"],
+				input[type="password"]{
+					text-indent: 10px;
+				}
 				
 				#l_yzm{
 					width: 80px;

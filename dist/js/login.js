@@ -78,7 +78,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 										} else {
 											$.ajax('http://localhost:3000/udata', {
 												type: 'post',
-												data: { id: data[i].id, carData: '' }
+												data: { id: data[i].id }
 											});
 										}
 									}

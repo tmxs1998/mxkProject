@@ -60,5 +60,8 @@
 			content.html(str_con);
 		});
 		
-	})
+	});
+	
+	
+	
 })();

@@ -1,0 +1,141 @@
+.container{
+	margin: 0 auto;
+	width: 990px;
+}
+
+.cart-tit{
+	line-height: 20px;
+	padding: 10px 5px;
+	font-size: 16px;
+	font-weight: 700;
+	color: #E2231A;
+	border-bottom: 2px #E2231A solid;
+}
+.cart-thead {
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    padding: 5px 0;
+    background: #f3f3f3;
+    border: 1px solid #e9e9e9;
+    border-top: 0;
+    position: relative;
+}
+.cart-thead .column {
+    float: left;
+}
+.t-checkbox{
+	width: 150px;
+	padding-left: 10px;
+}
+.t-goods{
+	width:350px;
+}
+.t-price{
+	width:100px;
+}
+.t-quantity{
+	width:200px;
+}
+.t-sum{
+	width:100px;
+}
+/* 商品列表 */
+#cartList li{
+	padding: 10px;
+	width: 1170px;
+	height: 80px;
+	border-bottom: 1px #eee solid;
+	display: inline-block;
+}
+#cartList li img{
+	width:80px;
+	height:80px;
+	margin: 0 10px;
+	border: 1px #ddd solid;
+	display: inline-block;
+}
+.check{
+	vertical-align: top;
+}
+.shoptit{
+	display: inline-block;
+	vertical-align: top;
+	font-size: 14px;
+	padding-left: 35px;
+	width:350px;
+}
+.perPrice{
+	display: inline-block;
+	vertical-align: top;
+	width: 100px;
+}
+.minus,.plus{
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	width:20px;
+	height:20px;
+	background: #fff;
+	border: 1px #ddd solid;
+	cursor: pointer;
+}
+.num{
+	display: inline-block;
+	vertical-align: top;
+	width:50px;
+	height:20px;
+	padding: 0 5px;
+	border: 1px #ddd solid;
+}
+.perTotalPrice{
+	display: inline-block;
+	vertical-align: top;
+	width:100px;
+	padding-left: 98px;
+}
+.delBtn{
+	display: inline-block;
+	vertical-align: top;
+	width:50px;
+	padding-left: 0px;
+	cursor: pointer;
+}
+.options-box {
+    position: relative;
+	margin: 20px 0;
+    height: 50px;
+	border: 1px #eee solid;
+}
+.price-sum{
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	padding: 0 10px;
+}
+#totalPrice{
+	display: inline-block;
+	color:#E2231A;
+	font-weight: 700;
+}
+/* 合计结算 */
+.btn-area {
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+	line-height: 50px;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+	background:#E2231A;
+	text-align: center;
+}
+.submit-btn{
+	font-size: 20px;
+	color:#fff;
+}
+.submit-btn:hover{
+	color:#fff;
+}

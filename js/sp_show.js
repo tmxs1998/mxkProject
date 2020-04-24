@@ -12,7 +12,11 @@ $(function() {
 			if (spID == data[i].id) {
 				str_pic += `<img src="${data[i].imgsrc[0]}"><ul class="clean">`
 				for (let j = 0; j < data[i].imgsrc.length; j++) {
-					str_pic += `<li><img src="${data[i].imgsrc[j]}" ></li>`
+					if(j == 0){
+						str_pic += `<li class="li_act"><img src="${data[i].imgsrc[j]}" ></li>`
+					}else{
+						str_pic += `<li><img src="${data[i].imgsrc[j]}" ></li>`
+					}
 				}
 				str_pic +=
 					`</ul><div class="pic_share clean"><span>分享到：</span><i></i><i></i><i></i><i></i><i></i><i></i></div>`;
@@ -33,7 +37,7 @@ $(function() {
 		let nPlus = $(".cartPlus");
 		let oNum = $("#cartNum");
 		let oBtn = $("#cartBtn");
-
+		
 
 		nSub.click(function() {
 			let count = oNum.val();
@@ -97,6 +101,16 @@ $(function() {
 				location.assign('http:localhost:8080/html/login.html');
 			}
 
+		});
+		
+		let pic_list = $('.sp_pic > ul > li');
+		let pic_list_img = $('.sp_pic > ul > li > img');
+		let pic_big = $('.sp_pic > img');
+		pic_list_img.mouseover(function(){
+			let imgsrc = $(this).attr('src');
+			pic_list.attr('class', '');
+			$(this).parent().attr('class', 'li_act');
+			pic_big.attr('src', imgsrc);
 		});
 
 	});

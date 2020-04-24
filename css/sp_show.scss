@@ -30,9 +30,13 @@ $picdiv_width: 430px;
 					height: $wr_width;
 				}
 				
-				&:hover{
+				&:hover {
 					border: solid 1px #ff0000;
 				}
+			}
+			
+			.li_act{
+				border: solid 1px #ff0000;
 			}
 			
 			.pic_ac{
@@ -112,6 +116,7 @@ $picdiv_width: 430px;
 					text-align: center;
 					color: #333;
 					border: solid 1px #333333;
+					cursor: pointer;
 					vertical-align: middle;
 				}
 				
@@ -122,11 +127,20 @@ $picdiv_width: 430px;
 					line-height: 18px;
 					border: solid 1px #333333;
 					outline: 0;
+					text-indent: 5px;
 					vertical-align: middle;
 				}
 				
 				#cartBtn{
+					padding: 5px;
+					color: #fff;
+					background: #FF6600;
+					border: 0;
+					outline: 0;
 					vertical-align: middle;
+					&:hover{
+						background: #FC0000;
+					}
 				}
 			}
 		}

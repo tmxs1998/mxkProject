@@ -62,4 +62,11 @@
 			content.html(str_con);
 		});
 	});
+
+	//右边栏
+	$(function () {
+		$('#rb_cart').click(function () {
+			location.assign('http://localhost:8080/html/shopcar.html');
+		});
+	});
 })();

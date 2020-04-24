@@ -14,7 +14,11 @@ $(function () {
 			if (spID == data[i].id) {
 				str_pic += "<img src=\"" + data[i].imgsrc[0] + "\"><ul class=\"clean\">";
 				for (var j = 0; j < data[i].imgsrc.length; j++) {
-					str_pic += "<li><img src=\"" + data[i].imgsrc[j] + "\" ></li>";
+					if (j == 0) {
+						str_pic += "<li class=\"li_act\"><img src=\"" + data[i].imgsrc[j] + "\" ></li>";
+					} else {
+						str_pic += "<li><img src=\"" + data[i].imgsrc[j] + "\" ></li>";
+					}
 				}
 				str_pic += "</ul><div class=\"pic_share clean\"><span>\u5206\u4EAB\u5230\uFF1A</span><i></i><i></i><i></i><i></i><i></i><i></i></div>";
 				str_i += "<h4>" + data[i].title + "</h4><ul>\n\t\t\t\t\t<li><span class=\"sp_i_info\">\u540A\u724C\u4EF7\uFF1A</span><span class=\"sp_i_dp\">" + data[i].dp_price + ".00</span></li><li><span class=\"sp_i_info\">\u9500\u552E\u4EF7\uFF1A</span><span class=\"sp_i_xs\">" + data[i].xs_price + ".00</span><span class=\"sp_i_hd\">\u6D3B\u52A8\u4EF7</span><span class=\"sp_i_pt\">(" + data[i].discount + ")</span><span>\u7ACB\u7701\uFFE5 " + (data[i].dp_price - data[i].xs_price) + "</span></li><li><span class=\"sp_i_info\">\u8FD0\u8D39\uFF1A</span><span>" + data[i].send + "</span></li><li><span class=\"cartSub\">-</span><input type=\"text\" value=\"1\" id=\"cartNum\"><span class=\"cartPlus\">+</span><input type=\"button\" value=\"\u52A0\u5165\u8D2D\u7269\u8F66\" id=\"cartBtn\" /></li></ul>";
@@ -89,6 +93,16 @@ $(function () {
 			} else {
 				location.assign('http:localhost:8080/html/login.html');
 			}
+		});
+
+		var pic_list = $('.sp_pic > ul > li');
+		var pic_list_img = $('.sp_pic > ul > li > img');
+		var pic_big = $('.sp_pic > img');
+		pic_list_img.mouseover(function () {
+			var imgsrc = $(this).attr('src');
+			pic_list.attr('class', '');
+			$(this).parent().attr('class', 'li_act');
+			pic_big.attr('src', imgsrc);
 		});
 	});
 });

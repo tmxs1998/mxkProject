@@ -53,15 +53,24 @@
 
 		// 侧边栏
 		$("#right_bar > div").mouseover(function () {
-			$(this).find(".rb_tip").show().stop().animate({ "opacity": 1, "right": "37px" }, 500);
+			$(this).find(".rb_tip").show().stop().animate({
+				"opacity": 1,
+				"right": "37px"
+			}, 500);
 		});
 
 		$("#right_bar > div").mouseleave(function () {
-			$(this).find(".rb_tip").stop().css({ "display": "none", "opacity": 0, "right": "50px" });
+			$(this).find(".rb_tip").stop().css({
+				"display": "none",
+				"opacity": 0,
+				"right": "50px"
+			});
 		});
 
 		$(".rb_gotop").mousedown(function () {
-			$("html, body").animate({ "scrollTop": 0 }, 1000);
+			$("html, body").animate({
+				"scrollTop": 0
+			}, 1000);
 		});
 
 		$(window).scroll(function () {
@@ -73,23 +82,32 @@
 			}
 		});
 
+		//购物车信息
 		var uSuc = JSON.parse(localStorage.getItem('uSuccess'));
 
 		if (uSuc) {
-			if (uSuc.id) {
-				var str_login = '<span>\u6B22\u8FCE\u60A8,' + uSuc.id + '<span>&nbsp;&nbsp;<a href="javascript:;" class="logout">\u6CE8\u9500</a>';
+			var str_login = '<span>\u6B22\u8FCE\u60A8,' + uSuc.id + '<span>&nbsp;&nbsp;<a href="javascript:;" class="logout">\u6CE8\u9500</a>';
 
-				$('.login_sign').html(str_login);
-				$('.cart_btn > a').attr('href', 'http://localhost:8080/html/shopcar.html');
-				// $.ajax('http://localhost:3000/udata').then(function(u_data){
-				// 	for(let i = 0; i < u_data.length; i++){
-				// 		if(u_data[i].id == uSuc.id){
+			$('.login_sign').html(str_login);
+			$('.cart_btn > a').attr('href', 'http://localhost:8080/html/shopcar.html');
+			$.ajax('http://localhost:3000/udata/' + uSuc.id).then(function (u_data) {
+				var count = 0;
+				console.log(u_data);
+				$.each(u_data, function (i, val) {
+					if (i != 'id' && i != 'carData') {
+						count++;
+					}
+				});
+				$('#cart_num').text(count);
+			});
 
-				// 		}
-				// 	}
-
-				// });
-			}
+			$('.rb_cart').click(function () {
+				location.assign('http://localhost:8080/html/shopcar.html');
+			});
+		} else {
+			$('.rb_cart').click(function () {
+				location.assign('http://localhost:8080/html/login.html');
+			});
 		}
 
 		$('.logout').click(function () {
